@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body>
+
+    <div ng-app="myApp">
+        <div ng-controller="BMW">
+            {{ kenteken + " " + kleur + " " + merk + " " + aantaldeuren}}
+        </div>
+        <br>
+        <div ng-controller="Mercedes">
+            {{ kenteken + " " + kleur + " " + merk + " " + aantaldeuren}}
+        </div>
+        <br>
+        <div ng-controller="Audi">
+            {{ kenteken + " " + kleur + " " + merk + " " + aantaldeuren}}
+        </div>
+        <br>
+        <div ng-controller="Ferrari">
+            {{ kenteken + " " + kleur + " " + merk + " " + aantaldeuren}}
+        </div>
+        <br>
+        <div ng-controller="Seat">
+            {{ kenteken + " " + kleur + " " + merk + " " + aantaldeuren}}
+        </div>
+
+    </div>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("BMW", function ($scope) {
+            $scope.kenteken = "74-LXS-HB";
+            $scope.kleur = "Zwart";
+            $scope.merk = "BMW";
+            $scope.aantaldeuren = "5";
+        });
+        app.controller("Mercedes", function ($scope) {
+            $scope.kenteken = "23-SSH-BX";
+            $scope.kleur = "Grijs";
+            $scope.merk = "Mercedes";
+            $scope.aantaldeuren = "3";
+        });
+        app.controller("Audi", function ($scope) {
+            $scope.kenteken = "48-HTT-XX";
+            $scope.kleur = "Grijs";
+            $scope.merk = "Audi";
+            $scope.aantaldeuren = "5";
+        });
+        app.controller("Ferrari", function ($scope) {
+            $scope.kenteken = "STH-35-XD";
+            $scope.kleur = "Rood";
+            $scope.merk = "Ferrari";
+            $scope.aantaldeuren = "3";
+        });
+        app.controller("Seat", function ($scope) {
+            $scope.kenteken = "10-HD-HH";
+            $scope.kleur = "Geel";
+            $scope.merk = "Seat";
+            $scope.aantaldeuren = "5";
+        });
+    </script>
+
+</body>
+
+</html>

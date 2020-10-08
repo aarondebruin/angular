@@ -1,0 +1,24 @@
+#blok1 {
+    margin: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+#blok2 {
+    margin: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+}
+
+#blok3 {
+    margin: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+.red {
+    background-color: red;
+}

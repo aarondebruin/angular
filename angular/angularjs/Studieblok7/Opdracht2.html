@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+    <p>Selecteer een kenteken</p>
+
+    <select ng-model="selectedCar" ng-options="x.Kenteken for x in autos">
+    </select>
+    <table border="1">
+        <tr>
+            <th>
+                Kenteken
+            </th>
+            <th>
+                Kleur
+            </th>
+            <th>
+                Merk
+            </th>
+            <th>
+                AantalDeuren
+            </th>
+        </tr>
+        <tr>
+            <td>
+                {{selectedCar.Kenteken}}
+            </td>
+            <td>
+                {{selectedCar.Kleur}}
+            </td>
+            <td>
+                {{selectedCar.Merk}}
+            </td>
+            <td>
+                {{selectedCar.AantalDeuren}}
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.autos = [{
+                    "Kenteken": "74-LXS-HB",
+                    "Kleur": "Zwart",
+                    "Merk": "BMW",
+                    "AantalDeuren": "5"
+                },
+                {
+                    "Kenteken": "23-SSH-BX",
+                    "Kleur": "Grijs",
+                    "Merk": "Mercedes",
+                    "AantalDeuren": "3"
+                },
+                {
+                    "Kenteken": "48-HTT-XX",
+                    "Kleur": "Grijs",
+                    "Merk": "Audi",
+                    "AantalDeuren": "5"
+                },
+                {
+                    "Kenteken": "STH-35-XD",
+                    "Kleur": "Rood",
+                    "Merk": "Ferrari",
+                    "AantalDeuren": "3"
+                },
+                {
+                    "Kenteken": "10-HD-HH",
+                    "Kleur": "Geel",
+                    "Merk": "Seat",
+                    "AantalDeuren": "5"
+                }
+            ]
+        });
+    </script>
+</body>
+
+</html>

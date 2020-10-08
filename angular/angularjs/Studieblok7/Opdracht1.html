@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Opdracht 7</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+    <select ng-model="Kleur" ng-options="x.model for x in cars">
+    </select>
+
+    <p>Fruitsoorten {{Kleur.fruit}}</p>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.cars = [
+                {model : "Geel", fruit : "banaan en stervrucht"},
+                {model : "Rood", fruit : "bessen en aardbeien"},
+                {model : "Groen", fruit : "appel"},
+                {model : "Bruin", fruit : "kiwi"}
+            ];
+        });
+        </script>
+
+</body>
+
+</html>

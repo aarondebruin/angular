@@ -1,0 +1,43 @@
+<div ng-controller="customersCtrl">
+
+    <h1>AngularJS Eindopdracht</h1>
+    <h3>Klik op th om volgorde te veranderen</h3>
+
+    <form>
+        <label>Voornaam</label><input type="text" name="Voornaam" ng-model="Voornaam" class="form-control"><br />
+        <label>Achternaam</label><input type="text" name="Achternaam" ng-model="Achternaam" class="form-control"><br />
+        <label>Straat</label><input type="text" name="Straat" ng-model="Straat" class="form-control"><br />
+        <label>Huisnummer</label><input type="text" name="Huisnummer" ng-model="Huisnummer" class="form-control"><br />
+        <label>Postcode</label><input type="text" name="Postcode" ng-model="Postcode" class="form-control"><br />
+        <label>Woonplaats</label><input type="text" name="Woonplaats" ng-model="Woonplaats" class="form-control"><br />
+        <label>Telefoonnummer</label><input type="text" name="Telefoonnummer" ng-model="Telefoonnummer"
+            class="form-control"><br />
+        <input type="submit" name="{{btnName}}" ng-click="Insert()" value="{{btnName}}">
+    </form>
+
+
+
+    <h3>Hover voor tooltip</h3>
+
+    <table mt class="table table-bordered">
+        <thead>
+            <tr>
+                <th ng-repeat="column in columns" ng-click="sortBy(column)">{{column}}</th>
+                <th>Action</th>
+            </tr>
+            <tr data-toggle="tooltip" title="{{x.TijdToegevoegd}}"
+                ng-repeat="x in eindopdracht | orderBy:sortField:reverseOrder">
+                <td ng-repeat="column in columns">{{x[column]}}</td>
+                <td> <button type="button" class="btn btn-success"
+                        ng-click="Update(x.Id, x.Voornaam, x.Achternaam, x.Straat, x.Huisnummer, x.Postcode, x.Woonplaats, x.Telefoonnummer)">Edit</button>
+                    <button type="button" class="btn btn-danger" ng-click="delete_data(x.Id );">Delete</></button>
+                </td>
+            </tr>
+        </thead>
+    </table>
+
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+
+    <table ng-controller="myCtrl" border="1px">
+        <tr> 
+            <th>Nummer</th>
+            <th>Kenteken</th>
+            <th>Kleur</th>
+            <th>Merk</th>
+            <th>Aantal Deuren</th>
+        </tr>
+        <tr ng-repeat="eigenschappen in data">
+            <td>{{ $index + 1 }}</td>
+            <td>{{eigenschappen.Kenteken}}</td>
+            <td>{{eigenschappen.Kleur}}</td>
+            <td>{{eigenschappen.Merk}}</td>
+            <td>{{eigenschappen.AantalDeuren}}</td>
+        </tr>
+    </table>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function ($scope) {
+            $scope.data = [{
+                    "Kenteken": "74-LXS-HB",
+                    "Kleur": "Zwart",
+                    "Merk": "BMW",
+                    "AantalDeuren": "5"
+                },
+                {
+                    "Kenteken": "23-SSH-BX",
+                    "Kleur": "Grijs",
+                    "Merk": "Mercedes",
+                    "AantalDeuren": "3"
+                },
+                {
+                    "Kenteken": "48-HTT-XX",
+                    "Kleur": "Grijs",
+                    "Merk": "Audi",
+                    "AantalDeuren": "5"
+                },
+                {
+                    "Kenteken": "STH-35-XD",
+                    "Kleur": "Rood",
+                    "Merk": "Ferrari",
+                    "AantalDeuren": "3"
+                },
+                {
+                    "Kenteken": "10-HD-HH",
+                    "Kleur": "Geel",
+                    "Merk": "Seat",
+                    "AantalDeuren": "5"
+                }
+            ]
+        });
+    </script>
+
+</body>
+
+</html>

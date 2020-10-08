@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+    <div id="blok1" ng-click="blok1 = blok1 + 1" ng-mousemove="color='blauw'" ng-mouseenter="myStyle={'color':'blue'}">
+        <h2>{{ blok1 }}</h2>
+    </div>
+
+    <div id="blok2" ng-click="blok2 = blok2 + 1" ng-mousemove="color='geel'" ng-mouseenter="myStyle={'color':'yellow'}">
+        <h2>{{ blok2 }}</h2>
+    </div>
+
+    <div id="blok3" ng-click="blok3 = blok3 + 1" ng-mousemove="color='rood'" ng-mouseenter="myStyle={'color':'red'}">
+        <h2>{{ blok3 }}</h2>
+    </div>
+
+
+
+
+
+
+
+
+    <h2 ng-style="myStyle">{{color}}</h2>
+
+
+
+
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {});
+    </script>
+</body>
+
+</html>

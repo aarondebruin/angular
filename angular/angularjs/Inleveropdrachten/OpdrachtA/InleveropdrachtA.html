@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body ng-app="myApp" >
+    <div ng-controller="myController">
+        <form novalidate class="form">
+        <p>Voornaam</p>
+        <p><input type="text" ng-model="Voornaam" required  /></p>
+
+        <p>Achternaam</p>
+        <p><input type="text" ng-model="Achternaam" required  /></p>
+
+        <p>Adres</p>
+        <p><input type="text" ng-model="Adres" required  /></p>
+
+        <p>Huisnummer</p>
+        <p><input type="text" ng-model="Huisnummer" required  /></p>
+
+        <p>Postcode</p>
+        <p><input type="text" ng-model="Postcode" required  /></p>
+
+        <p>Woonplaats</p>
+        <p><input type="text" ng-model="Woonplaats" required  /></p>
+
+        <p>Emailadres</p>
+        <p><input type="email" ng-model="Emailadres" required  /></p>
+
+        <p> </p>
+        <p><button ng-click="addRow()"> Add Row </button></p>
+    </form>
+
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Voornaam</th>
+                <th>Achternaam</th>
+                <th>Adres</th>
+                <th>Huisnummer</th>
+                <th>Postcode</th>
+                <th>Woonplaats</th>
+                <th>Emailadres</th>
+
+            </tr>
+
+            <tr ng-repeat="persons in personArray">
+                <td><label>{{$index + 1}}</label></td>
+                <td><label>{{persons.Voornaam}}</label></td>
+                <td><label>{{persons.Achternaam}}</label></td>
+                <td><label>{{persons.Adres}}</label></td>
+                <td><label>{{persons.Huisnummer}}</label></td>
+                <td><label>{{persons.Postcode}}</label></td>
+                <td><label>{{persons.Woonplaats}}</label></td>
+                <td><label>{{persons.Emailadres}}</label></td>
+            </tr>
+        </table>
+
+
+
+</body>
+<script src="model.js"></script>
+<script src="controller.js"></script>
+
+</html
